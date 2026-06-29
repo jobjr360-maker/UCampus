@@ -1,0 +1,71 @@
+/* ===========================
+   UCampus Design System v1.0
+=========================== */
+
+:root {
+
+    /* Primary */
+    --primary: #2563EB;
+    --primary-light: #60A5FA;
+
+    /* Status */
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+
+    /* Background */
+    --background: #F8FAFC;
+    --surface: #FFFFFF;
+
+    /* Text */
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+
+    /* Border */
+    --border: #E2E8F0;
+
+    /* Shadows */
+    --shadow-small: 0 2px 8px rgba(0,0,0,.05);
+    --shadow-medium: 0 6px 20px rgba(0,0,0,.08);
+    --shadow-large: 0 10px 30px rgba(0,0,0,.12);
+
+    /* Radius */
+    --radius: 16px;
+
+    /* Animation */
+    --transition: .3s ease;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--background);
+    color:var(--text-primary);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    font-family:inherit;
+}
+
+.container{
+    width:min(90%,1300px);
+    margin:auto;
+}
