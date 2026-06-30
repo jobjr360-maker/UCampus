@@ -1,0 +1,152 @@
+/* ===============================
+   ANNOUNCEMENTS SECTION
+================================== */
+.announcements{
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    color:#1e293b;
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+
+/* ---------- Carousel ---------- */
+.carousel{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+/* ---------- Slides ---------- */
+.slides{
+    display:flex;
+    transition:transform .6s ease-in-out;
+}
+
+/* ---------- Individual Slide ---------- */
+.slide{
+    min-width:100%;
+    display:flex;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+/* ---------- Slide Image ---------- */
+.slide img{
+    width:45%;
+    height:350px;
+    object-fit:cover;
+}
+
+/* ---------- Slide Content ---------- */
+.slide-content{
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* ---------- Badge ---------- */
+.badge{
+    width:fit-content;
+    background:#dbeafe;
+    color:#2563eb;
+    padding:6px 14px;
+    border-radius:50px;
+    font-size:.85rem;
+    margin-bottom:20px;
+}
+
+/* ---------- Slide Title ---------- */
+.slide-content h3{
+    font-size:2rem;
+    color:#1e293b;
+    margin-bottom:20px;
+}
+
+/* ---------- Slide Description ---------- */
+.slide-content p{
+    color:#64748b;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* ---------- Slide Link (Read more) ---------- */
+.slide-content a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ---------- Navigation Buttons (Arrows) ---------- */
+.prev,.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* ---------- Left Button ---------- */
+.prev{
+    left:20px;
+}
+
+/* ---------- Right Button ---------- */
+.next{
+    right:20px;
+}
+
+/* ---------- Navigation Dots ---------- */
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:25px;
+}
+
+/* ---------- Individual Dot ---------- */
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#cbd5e1;
+    cursor:pointer;
+}
+
+/* ---------- Active Dot ---------- */
+.dot.active{
+    background:#2563eb;
+}
+
+/* ---------- Responsive Design ---------- */
+@media(max-width:768px){
+    .slide{
+        flex-direction:column;
+    }
+
+    .slide img{
+        width:100%;
+        height:220px;
+    }
+}

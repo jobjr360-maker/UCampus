@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../../Assets/css/navbar.css">
     <link rel="stylesheet" href="../../Assets/css/home.css">
     <link rel="stylesheet" href="../../Assets/css/footer.css">
+    <link rel="stylesheet" href="../../Assets/css/carousel.css">
 
 </head>
 <body>
@@ -29,77 +30,313 @@
             <h1 class="site-title">UCampus</h1>
             <p class="site-tagline">Your Voice. Better Campus.</p>
         </div>
+    </header>
 
-        <nav class="main-nav">
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Activities</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Activities</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
 
-            <div class="nav-controls">
-                <div class="notification">
+        <div class="nav-controls">
+            <div class="notification">
+                <button class="notification-btn">
                     <i class="fa-regular fa-bell"></i>
-                    <span class="notification-badge">3</span>
-                </div>
+                    <span class="notification-count">3</span>
+                </button>
 
-                <div class="profile">
-                    <img src="../../Assets/images/default-profile.png" alt="Profile">
-                    <span>Ace ▼</span>
+                <div class="notification-menu">
+                    <div class="notification-header">
+                        <h4>Notifications</h4>
+                    </div>
+
+                    <div class="notification-scroll-area">
+                        <a href="#">
+                            <strong>New Announcement</strong>
+                            <p>Mid-semester exams start next Monday.</p>
+                            <small>30 min ago</small>
+                        </a>
+
+                        <a href="#">
+                            <strong>Someone replied</strong>
+                            <p>Your cafeteria review has a new comment.</p>
+                            <small>2 hours ago</small>
+                        </a>
+
+                        <a href="#">
+                            <strong>Review Approved</strong>
+                            <p>Your hostel review is now visible.</p>
+                            <small>Yesterday</small>
+                        </a>
+                    </div>
+
+                    <a href="#" class="notification-view-all">View All Notifications →</a>
                 </div>
             </div>
-        </nav>
 
-    </header>
+            <div class="profile">
+                <button class="profile-btn">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span id="username">Ace</span>
+                    <i class="fa-solid fa-chevron-down arrow"></i>
+                </button>
+
+                <div class="profile-menu">
+                    <div class="profile-header">
+                        <h4>Ace</h4>
+                        <p>Student • UDOM</p>
+                    </div>
+
+                    <hr>
+                    <a href="#"><i class="fa-solid fa-user"></i>My Profile</a>
+                    <a href="#"><i class="fa-solid fa-star"></i>My Reviews</a>
+                    <a href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+
+                    <hr>
+                    <a href="#" class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- ========================= -->
     <!-- HERO -->
     <!-- ========================= -->
     <section id="hero">
+        <div class="hero-content">
+            <span class="hero-date">Loading date...</span>
 
+            <h2 id="greeting">Good Afternoon, Ace</h2>
+
+            <p id="hero-message">Every opinion helps improve campus.</p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Browse Reviews</a>
+                <a href="#" class="btn-secondary">View Announcements</a>
+            </div>
+        </div>
     </section>
 
 
     <!-- ========================= -->
     <!-- ANNOUNCEMENTS -->
     <!-- ========================= -->
-    <section id="announcements">
+    <section class="announcements">
+        <div class="section-title">
+            <h2>📢 Latest Announcements</h2>
+            <p>Stay informed about everything happening around campus.</p>
+        </div>
 
+        <div class="carousel">
+            <button class="prev">&#10094;</button>
+
+            <div class="slides">
+
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <img src="../../Assets/images/exams.jpg" alt="exam photo">
+
+                    <div class="slide-content">
+                        <span class="badge">Academic</span>
+
+                        <h3> Mid-Semester Exams Begin Next Week</h3>
+
+                        <p>Mid-semester examinations will begin on Monday. Make sure you check your timetable.</p>
+
+                        <a href="#">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="../../Assets/images/cafeteria.jpg" alt="cafeteria photo">
+
+                    <div class="slide-content">
+                        <span class="badge"> Cafeteria</span>
+                        <h3>New Weekly Menu Released</h3>
+
+                        <p>The cafeteria has introduced a healthier meal plan this semester.</p>
+
+                        <a href="#">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="../../Assets/images/sports.jpg" alt="sports photo">
+
+                    <div class="slide-content">
+                        <span class="badge">Sports</span>
+                        <h3>Inter-Faculty Football Tournament</h3>
+
+                        <p>Registration closes this Friday.</p>
+
+                        <a href="#">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </section>
 
 
     <!-- ========================= -->
-    <!-- IMPROVEMENTS -->
+    <!-- Campus Updates -->
     <!-- ========================= -->
-    <section id="updates">
+    <section class="updates">
+        <div class="section-title">
+            <h2>✨ Campus Updates</h2>
+            <p>Recent improvements and changes around campus</p>
+        </div>
 
+        <div class="updates-grid">
+            <div class="update-card">
+                <i class="fa-solid fa-wifi"></i>
+                <h3>Library Wi-Fi</h3>
+
+                <p>New access points have been installed to improve connectivity.</p>
+            </div>
+
+            <div class="update-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>New Cafeteria Menu</h3>
+
+                <p>Healthier meal options are now available throughout the week.</p>
+            </div>
+
+            <div class="update-card">
+                <i class="fa-solid fa-house"></i>
+                <h3>Hostel Maintenance</h3>
+
+                <p>Water supply has been restored and renovations are complete.</p>
+            </div>
+        </div>
     </section>
 
 
     <!-- ========================= -->
     <!-- ACTIVITIES -->
     <!-- ========================= -->
-    <section id="activities">
+    <section class="activities">
+        <div class="section-title">
+            <h2>🎉 Upcoming Activities</h2>
 
-    </section>
+            <p>Discover events taking place across campus.</p>
+        </div>
 
+        <div class="activities-grid">
+            <div class="activity-card">
+                <img src="../../Assets/images/hackathon.jpg" alt="Hackathon">
 
-    <!-- ========================= -->
-    <!-- CAMPUS SERVICES -->
-    <!-- ========================= -->
-    <section id="reviews">
+                <div class="activity-content">
+                    <span class="activity-date">📅 4 July 2026</span>
 
+                    <h3>Annual Coding Hackathon</h3>
+                    <p>Join fellow students for a 24-hour coding challenge.</p>
+
+                    <a href="#">View Details →</a>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="../../Assets/images/football.jpg" alt="Football">
+
+                <div class="activity-content">
+                    <span class="activity-date">📅 8 July 2026</span>
+
+                    <h3>Inter-Faculty Football</h3>
+                    <p>Support your faculty in this year's tournament.</p>
+
+                    <a href="#">View Details →</a>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="../../Assets/images/career-fair-2.jpg" alt="Career Fair">
+
+                <div class="activity-content">
+                    <span class="activity-date">📅 12 July 2026</span>
+
+                    <h3>Career Fair 2026</h3>
+                    <p>Meet employers and explore internship opportunities.</p>
+
+                    <a href="#">View Details →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-all">
+            <a href="#">View All Activities →</a>
+        </div>
     </section>
 
 
     <!-- ========================= -->
     <!-- FOOTER -->
     <!-- ========================= -->
-    <footer>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-section">
 
-    </footer>
+                <img src="../../Assets/images/logo.png" alt="UCampus Logo" class="footer-logo">
 
+                <h2>UCampus</h2>
+                <p>Your Voice. Better Campus.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Activities</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>support@ucampus.app</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-github">Github</i></a>
+                <a href="#"><i class="fa-brands fa-linkedin">LinkedIn</i></a>
+                <a href="#"><i class="fa-brands fa-gmail">Email</i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 UCampus • Built with 🦾Gusto for students.
+        </div>
+</footer>
+
+    <script src="../../Assets/js/home.js"></script>
+    <script src="../../Assets/js/carousel.js"></script>
+    <script src="../../Assets/js/profile.js"></script>
+    <script src="../../Assets/js/notifications.js"></script>
 </body>
 </html>

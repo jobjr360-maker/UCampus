@@ -7,38 +7,61 @@
     width: 100%;
     background: var(--surface);
     box-shadow: var(--shadow-small);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 
 /* ---------- Brand Section ---------- */
 .site-brand{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 25px 0;
-    background: var(--surface);
+    color: white;
+}
+
+.site-brand::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/logo-background.jpg') center/cover no-repeat;
+    filter: blur(7px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.site-brand::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.site-brand > *{
+    position: relative;
+    z-index: 2;
 }
 
 .site-logo{
-    width: 240px;
+    width: 320px;
     height: auto;
     margin-bottom: 10px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    border-radius: 1rem;
 }
 
 .site-title{
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: white;
 }
 
 .site-tagline{
     margin-top: 5px;
     font-size: .95rem;
-    color: var(--text-secondary);
+    color: rgba(255,255,255,0.85);
 }
 
 
@@ -49,8 +72,11 @@
     align-items: center;
     padding: 0 5%;
     height: 50px;
-    border-top: 1px solid var(--border);
-    background: var(--surface);
+    background: #ffffff;
+    box-shadow:0 2px 12px rgba(0,0,0,.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 
@@ -116,16 +142,179 @@
     font-weight: 600;
 }
 
+/* ---------- Notification Count Badge ---------- */
+.notification-count{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--danger);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
 
-/* ---------- Profile ---------- */
-.profile{
+/* ---------- Notification Button ---------- */
+.notification-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 10px;
-    transition: var(--transition);
+    color: var(--text-primary);
+    padding: 8px 4px;
+}
+
+/* ---------- Notification Menu ---------- */
+.notification-menu{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 330px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+    display: none;
+    flex-direction: column;
+    z-index: 9999;
+    max-height: 420px;
+    overflow: visible;
+}
+
+/* ---------- Notification Menu Active ---------- */
+.notification-menu.active{
+    display: flex;
+    animation: fadeIn .2s ease;
+}
+
+/* ---------- Notification Header ---------- */
+.notification-header{
+    padding: 16px 18px;
+    border-bottom: 1px solid #f1f5f9;
+    flex-shrink: 0;
+}
+
+.notification-header h4{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* ---------- Notification Scroll Area ---------- */
+.notification-scroll-area{
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+}
+
+/* ---------- Notification Items ---------- */
+.notification-scroll-area a{
+    display: block;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: #1e293b;
+    transition: .25s;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.notification-scroll-area a:last-child{
+    border-bottom: none;
+}
+
+.notification-scroll-area a:hover{
+    background: #f8fafc;
+}
+
+.notification-scroll-area a strong{
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.notification-scroll-area a p{
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.notification-scroll-area a small{
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* ---------- Notification View All Link ---------- */
+.notification-view-all{
+    display: block !important;
+    padding: 14px 18px !important;
+    text-align: center;
+    border-top: 1px solid #f1f5f9 !important;
+    border-bottom: none !important;
+    color: #2563eb !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: .3s;
+    flex-shrink: 0;
+}
+
+.notification-view-all:hover{
+    background: #eff6ff !important;
+    color: #1d4ed8 !important;
+}
+
+/* Scrollbar styling for notification scroll area */
+.notification-scroll-area::-webkit-scrollbar{
+    width: 6px;
+}
+
+.notification-scroll-area::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+.notification-scroll-area::-webkit-scrollbar-thumb{
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.notification-scroll-area::-webkit-scrollbar-thumb:hover{
+    background: #94a3b8;
+}
+
+
+/* Notification scrollbar styling */
+.notification-menu::-webkit-scrollbar{
+    width: 6px;
+}
+
+.notification-menu::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+.notification-menu::-webkit-scrollbar-thumb{
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.notification-menu::-webkit-scrollbar-thumb:hover{
+    background: #94a3b8;
+}
+
+/* ---------- Profile ---------- */
+.profile i{
+    font-size:1.8rem;
+    color:var(--primary);
 }
 
 .profile:hover{
@@ -137,4 +326,118 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/* ---------- Profile Dropdown ---------- */
+.profile{
+    position:relative;
+    overflow: visible;
+}
+
+/* ---------- Profile Button ---------- */
+.profile-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:1rem;
+    color:#1e293b;
+    font-weight:600;
+}
+
+/* ---------- Profile Button Icon ---------- */
+.profile-btn i:first-child{
+    font-size:1.8rem;
+    color:#2563eb;
+}
+
+/* ---------- Dropdown Arrows ---------- */
+.arrow{
+    font-size:.8rem;
+    transition:.3s;
+}
+
+/* ---------- Profile Dropdown Menu ---------- */
+.profile-menu{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:240px;
+    background:white;
+    border-radius:16px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    display:none;
+    z-index:2000;
+}
+
+/* ---------- Headers ---------- */
+.profile-header{
+    padding:20px;
+}
+
+/* ---------- Header Titles ---------- */
+.profile-header h4{
+    margin-bottom:5px;
+}
+
+/* ---------- Header Text ---------- */
+.profile-header p{
+    color:#64748b;
+    font-size:.9rem;
+}
+
+/* ---------- Menu Links ---------- */
+.profile-menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px 20px;
+    color:#1e293b;
+    text-decoration:none;
+    transition:.25s;
+}
+
+/* ---------- Menu Links Hover Effect ---------- */
+.profile-menu a:hover{
+    background:#eff6ff;
+}
+
+/* ---------- Logout Icon ---------- */
+.logout{
+    color:#dc2626 !important;
+}
+
+.logout:hover{
+    background:#fef2f2 !important;
+}
+
+/* ---------- Divider ---------- */
+.profile-menu hr{
+    border:none;
+    border-top:1px solid #e5e7eb;
+}
+
+/* ---------- Active Dropdown ---------- */
+.profile-menu.active{
+    display:block;
+    animation:fadeIn .2s ease;
+}
+
+/* ---------- Rotate Arrow ---------- */
+.rotate{
+    transform:rotate(180deg);
+}
+
+/* ---------- Dropdown Animation ---------- */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
